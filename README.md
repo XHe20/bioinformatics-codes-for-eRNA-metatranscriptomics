@@ -1,6 +1,6 @@
 # bioinformatics-codes-for-eRNA-metatranscriptomics
 
-We tested the feasibility of eRNA-based metatranscriptomics for the simultaneous assessment of taxonomic composition and functional gene expression in response to environmental stress.
+We tested the feasibility of eRNA-based metatranscriptomics for the simultaneous assessment of taxonomic composition and functional gene expression of eukaryotes in freshwater environments in response to environmental stress.
 
 The following workflow and scripts were used for analyzing eRNA metatranscriptomics data. More details about the study will be available soon.
 
