@@ -1,0 +1,21 @@
+###Note 1: After running bowtie2_16samples_2024.sh and before running samtools_16samples_2024.sh, run the following commands.
+
+module load python
+module load samtools/1.17
+ 
+pwd
+#/home/xhe23/scratch/LEAP/megahit_2024
+ 
+samtools faidx final.contigs.fa
+
+
+###Note 2: After running samtools_16samples_2024.sh, download mapping_tools, then run the get_count_table.py command.
+
+pwd
+#/home/xhe23/scratch/LEAP/megahit_2024
+
+git clone https://github.com/metajinomics/mapping_tools.git
+
+module load python/2.7.18  
+
+python /home/xhe23/scratch/LEAP/megahit_2024/mapping_tools/get_count_table.py *.idxstats.txt > leap2022_contig_counts_2024.txt

@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --time=23:59:00
+#SBATCH --account=def-mcristes
+#SBATCH --mem=187G
+#SBATCH --cpus-per-task=48
+#SBATCH --job-name=megahit_2024
+#SBATCH --mail-user=xiaoping.he@mcgill.ca
+#SBATCH --mail-type=ALL
+
+/home/xhe23/software/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -1 \
+/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I3_01_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I3_02_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I3_05_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I3_07_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I4_02_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I4_03_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I4_05_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I4_07_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I7_01_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I7_03_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I7_05_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I8_01_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I8_03_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I8_06_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I8_07_ribodepleted_paired_fwd.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/Lib_NC_ribodepleted_paired_fwd.fq.gz \
+-2 \
+/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I3_01_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I3_02_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I3_05_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I3_07_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I4_02_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I4_03_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I4_05_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I4_07_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I7_01_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I7_03_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I7_05_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I8_01_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I8_03_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I8_06_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/I8_07_ribodepleted_paired_rev.fq.gz,/home/xhe23/scratch/LEAP/mtx_ribodepleted3/Lib_NC_ribodepleted_paired_rev.fq.gz \
+-o /home/xhe23/scratch/LEAP/megahit_2024

@@ -1,0 +1,7 @@
+#Obtain the sequences of differentially expressed contigs
+
+seqkit grep -f /Users/xiaopinghe/LEAP2022/DataAnalysis/Apr2024/qiime2_04/LMM_DE/lmerSeq_LMM_results_2024Apr23_DE_list.txt /Users/xiaopinghe/LEAP2022/DataAnalysis/Apr2024/final.contigs.fa -o /Users/xiaopinghe/LEAP2022/DataAnalysis/Apr2024/qiime2_04/LMM_DE/DE/lmerSeq_LMM_61957_contigs.fa
+
+grep -c "^>" /Users/xiaopinghe/LEAP2022/DataAnalysis/Apr2024/qiime2_04/LMM_DE/DE/lmerSeq_LMM_61957_contigs.fa
+
+emapper.py -m diamond --itype CDS -i /Users/xiaopinghe/LEAP2022/DataAnalysis/Apr2024/qiime2_04/LMM_DE/DE/lmerSeq_LMM_61957_contigs.fa --cpu 4 --data_dir /Users/xiaopinghe/eggnog_database -o /Users/xiaopinghe/LEAP2022/DataAnalysis/Apr2024/qiime2_04/LMM_DE/DE/lmerSeq_LMM_61957_contigs_anno

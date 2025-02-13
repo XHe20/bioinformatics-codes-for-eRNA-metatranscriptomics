@@ -1,0 +1,48 @@
+###split the contigs into 3 files
+module load seqkit/2.5.1
+seqkit split final.contigs.fa -p 3
+
+
+###Download and build the nr database
+
+[xhe23@cedar5 nr_2024]$ wget https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
+
+wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.FULL.gz
+
+wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip
+
+unzip taxdmp.zip
+gzip -d prot.accession2taxid.FULL.gz
+
+module load diamond/2.1.7
+
+diamond makedb --in /home/xhe23/scratch/LEAP/nr_2024/nr.gz --threads 32 \
+--db /home/xhe23/scratch/LEAP/nr_2024/nrdb \
+--taxonmap /home/xhe23/scratch/LEAP/nr_2024/prot.accession2taxid.FULL \
+--taxonnodes /home/xhe23/scratch/LEAP/nr_2024/nodes.dmp \
+--taxonnames /home/xhe23/scratch/LEAP/nr_2024/names.dmp
+
+###Diamond
+
+diamond blastx -d /home/xhe23/scratch/LEAP/nr_2024/nrdb.dmnd -q /home/xhe23/scratch/LEAP/megahit_2024/final.contigs.fa.split/final.contigs.part_001.fa \
+-o /home/xhe23/scratch/LEAP/dm_2024/final.contigs_01_smode_t2.daa -F 15 --range-culling -f 100 \
+-t ./ --threads 48 --sensitive --max-target-seqs 100 --evalue 0.00001 -b8
+
+diamond blastx -d /home/xhe23/scratch/LEAP/nr_2024/nrdb.dmnd -q /home/xhe23/scratch/LEAP/megahit_2024/final.contigs.fa.split/final.contigs.part_002.fa \
+-o /home/xhe23/scratch/LEAP/dm_2024/final.contigs_02_smode_t2.daa -F 15 --range-culling -f 100 \
+-t ./ --threads 48 --sensitive --max-target-seqs 100 --evalue 0.00001 -b8
+
+diamond blastx -d /home/xhe23/scratch/LEAP/nr_2024/nrdb.dmnd -q /home/xhe23/scratch/LEAP/megahit_2024/final.contigs.fa.split/final.contigs.part_003.fa \
+-o /home/xhe23/scratch/LEAP/dm_2024/final.contigs_03_smode_t2.daa -F 15 --range-culling -f 100 \
+-t ./ --threads 48 --sensitive --max-target-seqs 100 --evalue 0.00001 -b8
+
+###Megan
+
+/home/xhe23/megan/tools/daa-meganizer -i /home/xhe23/scratch/LEAP/dm_2024/final.contigs_01_smode_t2.daa \
+-mdb /home/xhe23/scratch/LEAP/megan-map-Feb2022.db --longReads -me 0.00001 -mpi 40
+
+/home/xhe23/megan/tools/daa-meganizer -i /home/xhe23/scratch/LEAP/dm_2024/final.contigs_02_smode_t2.daa \
+-mdb /home/xhe23/scratch/LEAP/megan-map-Feb2022.db --longReads -me 0.00001 -mpi 40
+
+/home/xhe23/megan/tools/daa-meganizer -i /home/xhe23/scratch/LEAP/dm_2024/final.contigs_03_smode_t2.daa \
+-mdb /home/xhe23/scratch/LEAP/megan-map-Feb2022.db --longReads -me 0.00001 -mpi 40
