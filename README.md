@@ -1,6 +1,6 @@
 # bioinformatics-codes-for-eRNA-metatranscriptomics
 
-We tested the feasibility of eRNA-based metatranscriptomics for the simultaneous assessment of taxonomic composition and functional gene expression of eukaryotes in freshwater environments in response to environmental stress.
+We explored the potential of eRNA-based metatranscriptomics to examine the acute effects of a glyphosate-based herbicide (GBH) on gene transcription across diverse freshwater eukaryotic taxa.
 
 ***He X**, Maruki T, Morgado W, Barrett RDH, Fugère V, Fussmann GF, Gonzalez A, Shapiro BJ, Cristescu ME. Environmental RNA-based metatranscriptomics as a novel biomonitoring tool: a case study of glyphosate-based herbicide effects on freshwater eukaryotic communities. (Submitted to Molecular Ecology)*
 
