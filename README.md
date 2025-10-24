@@ -2,7 +2,7 @@
 
 We explored the potential of eRNA-based metatranscriptomics to examine the acute effects of a glyphosate-based herbicide (GBH) on gene transcription across diverse freshwater eukaryotic taxa.
 
-***He X**, Maruki T, Morgado W, Barrett RDH, Fugère V, Fussmann GF, Gonzalez A, Shapiro BJ, Cristescu ME. Environmental RNA-based metatranscriptomics as a novel biomonitoring tool: a case study of glyphosate-based herbicide effects on freshwater eukaryotic communities. (Submitted to Molecular Ecology)*
+***He X**, Maruki T, Morgado-Gamero WB, Barrett RDH, Fugère V, Fussmann GF, Gonzalez A, Shapiro BJ, Cristescu ME. Environmental RNA-based metatranscriptomics as a novel biomonitoring tool: a case study of glyphosate-based herbicide effects on freshwater eukaryotic communities. Molecular Ecology. DOI: 10.1111/mec.70164*
 
 - The following workflow and associated commands are shared on GitHub.<br>
 Step1. Raw reads were processed using Trimmomatic.<br>
